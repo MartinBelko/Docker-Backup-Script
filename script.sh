@@ -23,7 +23,7 @@ DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/"
 # The passphrase for GPG encryption.
 # IMPORTANT: For cron jobs, you must hardcode the passphrase here.
 # For better security, consider using a passphrase file (see commented line).
-GPG_PASSPHRASE="secret_passphrase"
+GPG_PASSPHRASE='secret_passphrase'
 # GPG_PASSPHRASE_FILE="/root/.secure/gpg-pass" # Alternative: use a file
 
 # Remote Backup Server Details (e.g., Hetzner Storage Box)
