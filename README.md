@@ -66,8 +66,8 @@ You need to modify the following variables directly within the script. Examples 
 * `SOURCE_DIR`: The absolute path to your `docker-compose.yml` file. The Docker container's persistent data is expected to reside in this same directory.
 * `BACKUP_TEMP_DIR`: A temporary location where the compressed `.tar` file will be created. `/tmp` is generally a good suggestion.
 * `LOCAL_ENCRYPTED_BACKUP_DIR`: The local directory where encrypted backups will be stored. This directory will mirror the cloud copy.
-* `DISCORD_WEBHOOK_URL`: Your full Discord webhook URL, enclosed in double quotation marks (e.g., `"https://discord.com/api/webhooks/..."`).
-* `GPG_PASSPHRASE`: The passphrase used for encryption. ⚠️ **Important: Store this securely; losing it means losing access to your backup data.**
+* `DISCORD_WEBHOOK_URL`: Your full Discord webhook URL. ℹ️ **Note:** Enclosed in double quotation marks (e.g., `"https://discord.com/api/webhooks/..."`).
+* `GPG_PASSPHRASE`: The passphrase used for encryption. ⚠️ **Important: Store this securely; losing it means losing access to your backup data.** ℹ️ **Note:** Enclosed in single quotation marks to avoid special characters escaping (e.g., `'secretpassphrase1234/%&#'`).
 * `REMOTE_USER`: The username for your SSH storage server.
 * `REMOTE_HOST`: The DNS name or IP address of your SSH server.
 * `REMOTE_DIR`: The directory on the remote server where backups will be stored.
