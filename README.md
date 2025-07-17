@@ -44,6 +44,11 @@ The following packages are required for the script to function:
 * **Docker Compose Plugin**: Essential for managing Docker containers.
     * [Docker Compose Overview](https://docs.docker.com/compose/)
 
+You can ensure that the packages rsync, curl, tar, and gpg are installed—or will be installed—by running the following command on Rocky Linux:
+```
+sudo dnf install rsync curl tar gpg -y
+```
+
 ---
 
 ### 🔧 Configuration Variables
