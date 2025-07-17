@@ -49,6 +49,14 @@ You can ensure that the packages rsync, curl, tar, and gpg are installed—or wi
 sudo dnf install rsync curl tar gpg -y
 ```
 
+I usually install and run docker with Rocky Linux and with the following commands:
+```
+sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf update
+sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+sudo systemctl enable --now docker
+```
+
 ---
 
 ### 🔧 Configuration Variables
