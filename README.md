@@ -13,9 +13,8 @@ I prefer this method because, in case of a recovery, I can simply decrypt, extra
 The script also includes **cleanup mechanisms**: in case of a command failure, it will delete temporary files and restart the Docker container to ensure minimal disruption.
 
 ---
-
-⚠️ **Important:** You are solely responsible for creating, using, and securely storing your encryption passphrase. While you are free to use this script, I cannot be held responsible if you lose your passphrase and are unable to recover your data. I personally use Bitwarden (client) with Vaultwarden (backend) to store my passphrases and always have a worst-case scenario plan; I highly recommend you do the same.
-
+> [!CAUTION]
+> You are solely responsible for creating, using, and securely storing your encryption passphrase. While you are free to use this script, I cannot be held responsible if you lose your passphrase and are unable to recover your data. I personally use Bitwarden (client) with Vaultwarden (backend) to store my passphrases and always have a worst-case scenario plan; I highly recommend you do the same.
 ---
 
 ### 💻 Compatibility
@@ -24,9 +23,9 @@ The script is intended for **Linux** environments and has been successfully test
 * **Rocky Linux 9** on AMD/Intel x64
 * **Rocky Linux 9** on ARM64 (running in UTM on a MacBook Air M1, 2020)
 
-ℹ️ **Note:** The script is intentionally basic and should, in theory, work on most major Linux distributions like Ubuntu, Red Hat, Debian, and Fedora.
-
-ℹ️ **Note:** A log file is created for each run, overwriting the previous one, ensuring you always have the most recent execution log.
+> [!NOTE]
+> The script is intentionally basic and should, in theory, work on most major Linux distributions like Ubuntu, Red Hat, Debian, and Fedora.
+> A log file is created for each run, overwriting the previous one, ensuring you always have the most recent execution log.
 
 ---
 
@@ -66,8 +65,16 @@ You need to modify the following variables directly within the script. Examples 
 * `SOURCE_DIR`: The absolute path to your `docker-compose.yml` file. The Docker container's persistent data is expected to reside in this same directory.
 * `BACKUP_TEMP_DIR`: A temporary location where the compressed `.tar` file will be created. `/tmp` is generally a good suggestion.
 * `LOCAL_ENCRYPTED_BACKUP_DIR`: The local directory where encrypted backups will be stored. This directory will mirror the cloud copy.
-* `DISCORD_WEBHOOK_URL`: Your full Discord webhook URL. ℹ️ **Note:** Enclosed in double quotation marks (e.g., `"https://discord.com/api/webhooks/..."`).
-* `GPG_PASSPHRASE`: The passphrase used for encryption. ⚠️ **Important: Store this securely; losing it means losing access to your backup data.** ℹ️ **Note:** Enclosed in single quotation marks to avoid special characters escaping (e.g., `'secretpassphrase1234/%&#'`).
+* `DISCORD_WEBHOOK_URL`: Your full Discord webhook URL.
+> [!NOTE]
+> Enclosed in double quotation marks (e.g., `"https://discord.com/api/webhooks/..."`).
+
+* `GPG_PASSPHRASE`: The passphrase used for encryption.
+> [!CAUTION]
+> Store this securely; losing it means losing access to your backup data.
+
+> [!NOTE]
+> **Note:** Enclosed in single quotation marks to avoid special characters escaping (e.g., `'secretpassphrase1234/%&#'`).
 * `REMOTE_USER`: The username for your SSH storage server.
 * `REMOTE_HOST`: The DNS name or IP address of your SSH server.
 * `REMOTE_DIR`: The directory on the remote server where backups will be stored.
@@ -76,4 +83,5 @@ You need to modify the following variables directly within the script. Examples 
 * `LOG_FILE`: The absolute path for the log file.
 * `HOSTNAME`: Set the hostname of the server. This value is used in Discord notifications to identify the sending server. You can pass this as an argument when running the script (e.g., `./script.sh "server1"` uses `$1` for the hostname).
 
-ℹ️ **Note:** All other variables are automatically managed by the script and typically do not require manual adjustment.
+> [!NOTE]
+> All other variables are automatically managed by the script and typically do not require manual adjustment.
