@@ -1,3 +1,6 @@
+> [!WARNING]
+> **AI-Assisted Personal Project**: I am a sysadmin, not a dedicated developer—so projects like this are built to serve my own specific needs and are happily created and maintained using AI. While I manually review and test all code before using it personally, unhandled bugs or edge cases can occur. Please **use with caution**.
+
 # Docker Backup Script
 
 This script is designed to be my primary method for backing up important Docker containers to the cloud. I don't trust any single provider, including Hetzner, so I **encrypt the data before it's stored remotely**.
